@@ -14,8 +14,7 @@ login_path = "http://github.com/login"
 
 username_input = 'Insert your username here.'
 password_input = 'Insert your password here.'
-most_active_users = %w[fabpot, andrew, taylorrotwell, egoist, HugoGiraudel, 
-						ornicar, bebraw, nelsonic, alexcrichton, jonathanong, mikermcneil, benbalter, jxnblk, yegor256, orta, rstacruz, afc163, joshaber]
+most_active_users = %w[fabpot andrew taylorrotwell egoist HugoGiraudel ornicar bebraw nelsonic alexcrichton jonathanong mikermcneil benbalter jxnblk yegor256 orta rstacruz afc163 joshaber]
 
 # Driver selenium, using chrome, install chrome driver according with you installed google chrome.
 # Im using version 74, to see your chrome version checkout visiting your about tab.
@@ -45,7 +44,7 @@ sleep 1
 login_form.click
 sleep 1
 
-most_populars.each do |user|
+most_active_users.each do |user|
 	DEFAULT_NUMBER_PAGES.times do |page|
 		path = "https://github.com/%s/followers?page=%s" % [user, page]
 		driver.navigate.to path
