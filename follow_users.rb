@@ -12,9 +12,9 @@ login_path = "http://github.com/login"
 
 # Credentials and some Variables.
 
-username_input = 'Insert your username here.'
-password_input = 'Insert your password here.'
-most_active_users = %w[fabpot andrew taylorrotwell egoist HugoGiraudel ornicar bebraw nelsonic alexcrichton jonathanong mikermcneil benbalter jxnblk yegor256 orta rstacruz afc163 joshaber]
+username_input = 'Insert your github username'
+password_input = 'Insert your github password'
+most_active_users = %w[michaelklishin jordansissel drnic sferik svenfuchs radar josevalim postmodern fsouza kennethreitz sferik isaacs visionmedia tmcw]
 
 # Driver selenium, using chrome, install chrome driver according with you installed google chrome.
 # Im using version 74, to see your chrome version checkout visiting your about tab.
@@ -42,21 +42,21 @@ sleep 1
 login_form = driver.find_element(xpath: "//input[@value='Sign in']")
 sleep 1
 login_form.click
-sleep 1
+sleep 10
+
+# Iterating followers page from the most active users then following.
 
 most_active_users.each do |user|
+	path = "https://github.com/%s/followers" % [user]
+	driver.navigate.to path
+	sleep 1
+
 	DEFAULT_NUMBER_PAGES.times do |page|
-		path = "https://github.com/%s/followers?page=%s" % [user, page]
-		driver.navigate.to path
-		sleep 1
-
 		follow_button = driver.find_elements(xpath: "//input[@aria-label='Follow this person']")
+		follow_button.each { |follow_element| follow_element.submit; sleep 1 }
 
-		if follow_button.any?
-			follow_button.each { |follow_element| follow_element.submit; sleep 1 }
-		else
-			break
-		end
+		next_button = driver.find_element(link_text: 'Next')
+		next_button.any? ? next_button.click : break
 	end
 end
 
