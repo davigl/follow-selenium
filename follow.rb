@@ -5,6 +5,8 @@ include Selenium
 class Follow
 	DEFAULT_NUMBER_PAGES = 100
 
+	# Constuctor, initialize some variables.
+
 	def initialize(username, password)
 		@username, @password = username, password
 		@login_path = "https://github.com/login"
@@ -12,6 +14,8 @@ class Follow
 		@follow_xpath = "//input[@aria-label='Follow this person']"
 		@most_active_users = %w[michaelklishin jordansissel drnic sferik svenfuchs radar josevalim postmodern fsouza kennethreitz sferik isaacs visionmedia tmcw].shuffle
 	end
+
+	# Login method which navigates to login path, then fills with login and password then signin.
 
 	def login
 		navigate(@login_path)
@@ -25,6 +29,8 @@ class Follow
 
 		login_form.click; sleep 15
 	end
+
+	# Follow method which navigates to an popular user followers page, then starts to follow her followers.
 
 	def follow
 		@most_active_users.each do |user|
@@ -41,9 +47,13 @@ class Follow
 		end
 	end
 
+	# Exit method to quit chrome driver.
+
 	def exit
 		quit
 	end
+
+	# Run method.
 
 	def run
 		login; follow; quit
