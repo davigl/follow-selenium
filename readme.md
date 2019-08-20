@@ -65,7 +65,7 @@ Install and setup [chrome driver](https://chromedriver.chromium.org/downloads) a
 
 ### Setting up and running the script.
 
-Open the ruby script in a text editor then modify these variables inserting your github credentials.
+Open the ruby script in a text editor then insert your github credentials where you see "Github Username" and "Github Password".
 
 ```
 username_input and password_input
@@ -74,7 +74,7 @@ username_input and password_input
 Then run the script typing.
 
 ```shell
-ruby follow_users.rb
+ruby follow.rb
 ```
 
 ### License
