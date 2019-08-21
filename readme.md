@@ -42,7 +42,7 @@ driver selenium
 
 ### Installing
 
-* Check your Ruby version
+#### Check your Ruby version
 
 ```shell
 ruby -v
@@ -54,19 +54,19 @@ If you dont have it, install using [rbenv](https://github.com/rbenv/rbenv) (it c
 rbenv install version
 ```
 
-* Install selenium-webdriver
+#### Install selenium-webdriver
 
 ```shell
 gem install selenium-webdriver -v 2.53.0
 ```
 
-* Driver selenium
+#### Driver selenium
 
 Install and setup [chrome driver](https://chromedriver.chromium.org/downloads) according to your google chrome version and your OS.
 
-### Setting up and running the script.
+### Running the script.
 
-Then run the script typing and inserting the args correctly.
+Run the script typing and inserting the args correctly.
 
 ```shell
 ruby follow.rb your_github_username your_github_password
