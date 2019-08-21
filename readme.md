@@ -65,7 +65,7 @@ Install and setup [chrome driver](https://chromedriver.chromium.org/downloads) a
 
 ### Setting up and running the script.
 
-Then run the script typing and inserting yhe args correctly.
+Then run the script typing and inserting the args correctly.
 
 ```shell
 ruby follow.rb your_github_username your_github_password
