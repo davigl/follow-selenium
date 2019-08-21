@@ -60,4 +60,4 @@ class Follow
 	end
 end
 
-Follow.new("Github Username", "Github Password").run
+Follow.new(ARGV[0].to_s, ARGV[1].to_s).run
