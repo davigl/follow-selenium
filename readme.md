@@ -1,7 +1,7 @@
 # <div align="center"> Github Follow via Selenium </div>
 
 * Ruby script to follow people which follows the most active users on github;
-* OBS: Make sure you are careful when using this it will be apparent that you are being spammy so use at your own risk;
+* OBS: Make sure you are being careful when using this, it will be apparent that you are being spammy so use at your own risk;
 * If you're getting stuck during authentication, you've to manually get and insert authenticate code;
 * If you like it make sure to give star, thank you!
 
